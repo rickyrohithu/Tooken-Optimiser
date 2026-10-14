@@ -38,10 +38,13 @@ Sending JSON to LLMs wastes tokens on syntax (`{`, `}`, `"`, `:`).
 
 ### Backend
 
-- **Python FastAPI**: High-performance API framework
-- **Google Gemini SDK**: Logic and reasoning engine
-- **Tiktoken**: Fallback token counting
-- **Pytest**: Comprehensive test suite (10 passing tests)
+- **Node.js & Express**: Fast, lightweight JavaScript API framework
+- **@toon-format/toon**: Official JavaScript implementation for TOON format serialization & parsing
+- **@google/genai**: Google Gemini SDK for querying and reasoning
+- **Tiktoken**: Token counting approximation for LLM token benchmarking
+- **WebSocket (ws)**: Real-time token streaming for AI queries
+- **LangSmith**: Observability and LLM tracing support
+- **Node Test Runner**: Built-in test suite verifying format encoding/decoding and token counting
 
 ### Frontend
 
@@ -55,25 +58,23 @@ Sending JSON to LLMs wastes tokens on syntax (`{`, `}`, `"`, `:`).
 
 ### Prerequisites
 
-- Python 3.8+
-- Node.js 16+
+- Node.js 18+
 - Google Gemini API Key
 
 ### 1. Backend Setup
 
 ```bash
 cd backend
-python -m venv venv
-# Windows
-.\venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
-
-pip install -r requirements.txt
+npm install
 
 # Create .env file
 cp .env.example .env
 # Add your GEMINI_API_KEY in .env
+
+# Start development server
+npm run dev
+# Or start production server
+npm start
 ```
 
 ### 2. Frontend Setup
@@ -90,7 +91,7 @@ We believe in reliability. This project includes a test suite verifying conversi
 
 ```bash
 cd backend
-pytest test_utils.py -v
+npm test
 ```
 
 ---
