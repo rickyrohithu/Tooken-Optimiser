@@ -1,0 +1,203 @@
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.converter-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.input-section,
+.options-section,
+.output-section {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: var(--space-4);
+}
+
+.input-section h2,
+.options-section h2,
+.output-section h2 {
+    margin: 0 0 var(--space-3) 0;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.code-input,
+.code-output {
+    width: 100%;
+    min-height: 300px;
+    font-family: ui-monospace, 'SF Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+    color: var(--text-primary);
+    resize: vertical;
+    transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.code-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+.code-output {
+    cursor: default;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+/* Options */
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.option-group label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.option-group input,
+.option-group select {
+    padding: 8px 12px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.option-group input:focus,
+.option-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Buttons */
+.btn-convert {
+    width: 100%;
+    padding: 8px 14px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.12s cubic-bezier(0.02, 0.01, 0.47, 1);
+    margin-bottom: var(--space-4);
+}
+
+.btn-convert:hover {
+    background-color: var(--accent-hover);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-convert:active {
+    transform: scale(0.99);
+}
+
+.btn-convert:disabled {
+    background-color: var(--bg-hover);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.btn-copy {
+    margin-top: var(--space-3);
+    padding: 7px 12px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.12s cubic-bezier(0.02, 0.01, 0.47, 1);
+    width: 100%;
+}
+
+.btn-copy:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+}
+
+/* Metrics */
+.metrics {
+    display: grid;
+    gap: var(--space-2);
+    background-color: var(--bg-secondary);
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+}
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.metric-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.metric-value {
+    font-family: ui-monospace, monospace;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.metric-value.toon {
+    color: var(--accent);
+}
+
+.metric.highlight {
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-color);
+}
+
+.metric-value.savings {
+    color: var(--success);
+}
+
+.error-message {
+    margin-bottom: var(--space-3);
+    padding: var(--space-3);
+    background-color: rgba(235, 87, 87, 0.06);
+    border: 1px solid rgba(235, 87, 87, 0.2);
+    border-radius: var(--radius-sm);
+    color: var(--error);
+    font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+    .converter-main {
+        grid-template-columns: 1fr;
+    }
+}

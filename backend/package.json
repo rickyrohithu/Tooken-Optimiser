@@ -1,0 +1,22 @@
+{
+  "name": "lexa-studio-backend",
+  "version": "1.0.0",
+  "description": "Lexa Studio - Node/Express backend for TOON format optimization and AI analysis",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/utils.test.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.28.0",
+    "@toon-format/toon": "^4.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "langsmith": "^0.10.11",
+    "tiktoken": "^1.0.22",
+    "ws": "^8.18.0"
+  }
+}
